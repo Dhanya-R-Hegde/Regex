@@ -9,7 +9,7 @@
             switch(option)
             {
                 case 1 : PatternMatching.ValidateFirstName(); break;
-                
+                case 2: PatternMatching.ValidateLastName(); break;
                 default: Console.WriteLine("Enter a valid value"); break;
 
             }

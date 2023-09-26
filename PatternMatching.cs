@@ -31,6 +31,26 @@ namespace RegexExplanation
             Console.WriteLine(FirstName);
         }
 
-        
+        public static void ValidateLastName()
+        {
+            Console.WriteLine("Enter Last Name");
+            string LastName = Console.ReadLine();
+            string NamePattern = "^[A-Z]{1}[a-zA-Z]{2,}$";
+            Regex regexObj = new Regex(NamePattern);
+
+            if (regexObj.IsMatch(LastName))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Name is Valid");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Name is Invalid");
+                Console.ResetColor();
+            }
+            Console.WriteLine(LastName);
+        }
     }
 }
