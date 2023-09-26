@@ -52,5 +52,28 @@ namespace RegexExplanation
             }
             Console.WriteLine(LastName);
         }
+
+        public static void ValidateEmail()
+        {
+            Console.WriteLine("Enter Email");
+            string Email = Console.ReadLine();
+            string NamePattern = "^[a-zA-Z]*[.+-]*[0-9a-zA-Z]+[@]+[0-9a-zA-Z]+[.]+[a-zA-z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";
+
+            Regex regexObj = new Regex(NamePattern);
+
+            if (regexObj.IsMatch(Email))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Email is Valid");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Email is Invalid");
+                Console.ResetColor();
+            }
+            Console.WriteLine(Email);
+        }
     }
 }
