@@ -11,6 +11,7 @@
                 case 1 : PatternMatching.ValidateFirstName(); break;
                 case 2: PatternMatching.ValidateLastName(); break;
                 case 3: PatternMatching.ValidateEmail(); break;
+                case 4: PatternMatching.ValidateMobileNumber(); break;
                 default: Console.WriteLine("Enter a valid value"); break;
 
             }

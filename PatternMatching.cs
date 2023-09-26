@@ -75,5 +75,29 @@ namespace RegexExplanation
             }
             Console.WriteLine(Email);
         }
+
+
+        public static void ValidateMobileNumber()
+        {
+            Console.WriteLine("Enter the Mobile Number with Country Code");
+            string MobileNumber = Console.ReadLine();
+            string mobileNumberPattern = "^[0-9]{2,4}[ ]{1}[6-9]{1}[0-9]{9}$";
+
+            Regex regexObj = new Regex(mobileNumberPattern);
+
+            if (regexObj.IsMatch(MobileNumber))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Mobile Number is Valid");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Mobile Number is Invalid");
+                Console.ResetColor();
+            }
+            Console.WriteLine(MobileNumber);
+        }
     }
 }
