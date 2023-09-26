@@ -99,5 +99,29 @@ namespace RegexExplanation
             }
             Console.WriteLine(MobileNumber);
         }
+
+
+        public static void ValidatePassword()
+        {
+            Console.WriteLine("Enter the Password");
+            string Password = Console.ReadLine();
+            string passwordPattern = "^[A-Z]{1,}[a-z]{1,}[~@#$^*()_+=[\\]{}|\\\\,.?: -]{1}[0-9]{1,}$";
+
+            Regex regexObj = new Regex(passwordPattern);
+
+            if (regexObj.IsMatch(Password))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Password is Valid");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Password is Invalid");
+                Console.ResetColor();
+            }
+            Console.WriteLine(Password);
+        }
     }
 }
